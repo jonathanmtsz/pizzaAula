@@ -33,4 +33,11 @@ export const ElementButton = styled.button`
     background-color: transparent;
     color: ${colors.primary.main};
   }
+
+  &:disabled {
+    border-color: ${colors.text.dark};
+    background-color: transparent;
+    color: ${colors.text.dark};
+    cursor: not-allowed;
+  }
 `

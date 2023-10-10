@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import PrivateRoutes from "./components/privateRoutes/PrivateRoutes"
 import Home from "./pages/home/Home"
 import Sizes from "./pages/sizes/Sizes"
 import Flavours from "./pages/flavours/Flavours"
@@ -15,7 +16,9 @@ function App() {
         <Route path={routes.pizzaSize} element={<Sizes />} />
         <Route path={routes.pizzaFlavour} element={<Flavours />} />
         <Route path={routes.summary} element={<Summary />} />
-        <Route path={routes.checkout} element={<Checkout />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path={routes.checkout} element={<Checkout />} />
+        </Route>
         <Route path={routes.login} element={<Login />} />
       </Routes>
     </BrowserRouter>
